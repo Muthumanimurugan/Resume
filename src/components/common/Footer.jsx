@@ -63,7 +63,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-lg bg-gray-100 dark:bg-dark-800 text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  className="p-2 rounded-lg bg-gray-100 dark:bg-dark-800 text-gray-900 dark:text-black hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
                   aria-label={label}
                 >
                   <Icon size={20} />

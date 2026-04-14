@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,33 +23,63 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setSubmitted(false), 3000);
+    setLoading(true);
+    setError('');
+
+    try {
+      // EmailJS credentials from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS credentials not configured. Please check your .env file.');
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'muthumanimurugan1999@gmail.com',
+        },
+        publicKey
+      );
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err) {
+      console.error('Email send failed:', err);
+      setError('Failed to send message. Please try again or contact directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'muthumanimurugan.kr@gmail.com',
-      href: 'mailto:muthumanimurugan.kr@gmail.com',
+      value: 'muthumanimurugan1999@gmail.com',
+      href: 'mailto:muthumanimurugan1999@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 98765 43210',
-      href: 'tel:+919876543210',
+      value: '+91 9025157594',
+      href: 'tel:+919025157594',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Chennai, India',
-      href: '#',
+      value: 'Dindigul, India',
+      href: 'https://www.google.com/maps?q=Dindigul,+India',
     },
   ];
 
@@ -111,6 +144,16 @@ const Contact = () => {
                   </motion.div>
                 )}
 
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-lg flex items-center gap-2"
+                  >
+                    <span>✗ {error}</span>
+                  </motion.div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Name */}
                   <div>
@@ -123,7 +166,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-800 border border-gray-200 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-800 border border-gray-200 dark:text-black   dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -139,7 +182,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-800 border border-gray-200 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-800 border dark:text-black border-gray-200 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -155,14 +198,14 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-800 border border-gray-200 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3  bg-gray-50 dark:bg-dark-800 border border-gray-200 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:text-black  transition-colors"
                       placeholder="Project Inquiry"
                     />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 ">
                       Message
                     </label>
                     <textarea
@@ -171,7 +214,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows="5"
-                      className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-800 border border-gray-200 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-dark-800 border dark:text-black border-gray-200 dark:border-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors resize-none"
                       placeholder="Tell me about your project..."
                     />
                   </div>
@@ -181,10 +224,20 @@ const Contact = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="btn-primary w-full flex items-center justify-center gap-2"
+                    disabled={loading}
+                    className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send size={18} />
-                    Send Message
+                    {loading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={18} />
+                        Send Message
+                      </>
+                    )}
                   </motion.button>
                 </form>
               </div>

@@ -45,7 +45,7 @@ const Home = () => {
               <img
                 src={myImage}
                 alt="Avatar"
-                className="w-32 h-32 md:w-48 md:h-48 rounded-full mx-auto shadow-xl border-4 border-primary-500"
+                className="w-32 h-32 md:w-48 mt-5 md:h-48 rounded-full mx-auto shadow-xl border-4 border-primary-500"
               />
             </motion.div>
 

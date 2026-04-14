@@ -11,7 +11,7 @@ const ProjectCard = ({ project, index }) => {
       className="card group"
     >
       {/* Project Image */}
-      <div className="relative h-48 md:h-56 mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-primary-100 dark:from-primary-900 to-primary-50 dark:to-dark-900">
+      <div className="relative h-48 md:h-56 mb-4  rounded-lg overflow-hidden bg-gradient-to-br from-primary-100 dark:from-primary-900 to-primary-50 dark:to-dark-900">
         <motion.img
           src={project.image}
           alt={project.title}
