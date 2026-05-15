@@ -5,19 +5,15 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: 'https://github.com',
+      href: 'https://github.com/Muthumanimurugan',
       label: 'GitHub',
     },
     {
       icon: Linkedin,
-      href: 'https://linkedin.com',
+      href: 'www.linkedin.com/in/muthu-kr-0a7a46238',
       label: 'LinkedIn',
     },
-    {
-      icon: Twitter,
-      href: 'https://twitter.com',
-      label: 'Twitter',
-    },
+
     {
       icon: Mail,
       href: 'mailto:your@email.com',

@@ -13,8 +13,8 @@ const Skills = () => {
     { name: 'Tailwind CSS', icon: '💨', proficiency: 90 },
     { name: 'Next.js', icon: '▲', proficiency: 80 },
     { name: 'REST APIs', icon: '🔌', proficiency: 85 },
-    { name: 'Firebase', icon: '🔥', proficiency: 75 },
-    { name: 'MongoDB', icon: '🍃', proficiency: 70 },
+    { name: 'Unit Testing', icon: '🧪', proficiency: 80 },
+    { name: 'TypeScript', icon: '🔷', proficiency: 90 },
   ];
 
   const categories = [

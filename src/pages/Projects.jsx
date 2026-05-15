@@ -1,56 +1,45 @@
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/common/ProjectCard';
+import image from "../assets/logo.png";
+import Justplay from "../assets/app_logo.png";
+import Medscheme from "../assets/medschme.png";    
 
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce React App',
-      description: 'A fully functional e-commerce platform built with React, featuring product catalog, shopping cart, and payment integration using Stripe.',
-      image: 'https://via.placeholder.com/400x300',
-      tags: ['React', 'JavaScript', 'Stripe', 'CSS'],
-      github: 'https://github.com',
-      demo: 'https://example.com',
+      title: 'valuestreak',
+      description:"A role-based product management application where admins manage categories and advertisements, vendors add and manage products, and users can browse, bookmark, and rate products with secure access control and responsive design.",
+      image: image,
+      tags: ['React', 'JavaScript', 'API Integration', 'CSS','Firebase'],
+      // github: 'https://github.com',
+      // demo: 'https://example.com',
     },
     {
-      title: 'Task Management Dashboard',
-      description: 'A collaborative task management application with real-time updates, user authentication, and project organization features.',
-      image: 'https://via.placeholder.com/400x300',
-      tags: ['React', 'Firebase', 'Tailwind CSS'],
-      github: 'https://github.com',
-      demo: 'https://example.com',
+      title: 'Justplay',
+      description: 'A turf booking application where users can discover and book turfs based on location, turf owners can manage listings and slots, and admins verify and monitor activities, with secure payments, real-time notifications, and role-based access control.',
+      image: Justplay,
+       tags: ['React', 'JavaScript', 'API Integration', 'CSS','Firebase','payment gateway'],
+      // github: 'https://github.com',
+      // demo: 'https://example.com',
     },
     {
-      title: 'Weather App',
-      description: 'A responsive weather dashboard that displays real-time weather data with beautiful visualizations and location-based features.',
-      image: 'https://via.placeholder.com/400x300',
-      tags: ['React', 'API Integration', 'CSS'],
-      github: 'https://github.com',
-      demo: 'https://example.com',
+      title: 'Medscheme ticketing system',
+      description: 'A role-based ticketing system with chatbot integration that automatically creates category-based tickets for unresolved queries, featuring real-time notifications, REST API integration, and a reusable React TypeScript UI for efficient ticket management by admins and agents.',
+      image: Medscheme,
+      tags: ['React', 'API Integration', 'Tailwind CSS', 'TypeScript', 'Firebase'],
+      // github: 'https://github.com',
+      // demo: 'https://example.com',
     },
     {
-      title: 'Portfolio Website',
-      description: 'A modern personal portfolio website showcasing projects, skills, and experience with smooth animations and responsive design.',
-      image: 'https://via.placeholder.com/400x300',
-      tags: ['React', 'Framer Motion', 'Tailwind CSS'],
-      github: 'https://github.com',
-      demo: 'https://example.com',
+      title: 'Medscheme webbot',
+      description: 'A chatbot integrated using Socket.io for real-time communication, where users can ask questions and receive instant responses. If a query cannot be answered, the chatbot automatically raises a ticket. The chatbot is embedded into external websites using a script-based integration, enabling seamless customer support and ticket creation',
+      image: Medscheme,
+      tags: ['React',  'CSS',"Socket.io", 'JavaScript', 'Firebase'],
+      // github: 'https://github.com',  
+      // demo: 'https://example.com',
     },
-    {
-      title: 'Blog Platform',
-      description: 'A modern blogging platform with React, featuring markdown support, user comments, categories, and search functionality.',
-      image: 'https://via.placeholder.com/400x300',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      github: 'https://github.com',
-      demo: 'https://example.com',
-    },
-    {
-      title: 'Social Media Dashboard',
-      description: 'An analytics dashboard for social media metrics with interactive charts and performance tracking built with React.',
-      image: 'https://via.placeholder.com/400x300',
-      tags: ['React', 'Chart.js', 'API'],
-      github: 'https://github.com',
-      demo: 'https://example.com',
-    },
+
+
   ];
 
   return (
