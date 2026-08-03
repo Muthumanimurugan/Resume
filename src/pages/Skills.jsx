@@ -3,18 +3,21 @@ import SkillItem from '../components/common/SkillItem';
 
 const Skills = () => {
   const skills = [
-    { name: 'React', icon: '⚛️', proficiency: 95 },
-    { name: 'JavaScript', icon: '📜', proficiency: 90 },
-    { name: 'TypeScript', icon: '🔷', proficiency: 80 },
-    { name: 'HTML/CSS', icon: '🎨', proficiency: 92 },
-    { name: 'Node.js', icon: '🟢', proficiency: 75 },
-    { name: 'Git', icon: '🔧', proficiency: 88 },
-    { name: 'Redux', icon: '🔄', proficiency: 85 },
-    { name: 'Tailwind CSS', icon: '💨', proficiency: 90 },
-    { name: 'Next.js', icon: '▲', proficiency: 80 },
-    { name: 'REST APIs', icon: '🔌', proficiency: 85 },
-    { name: 'Unit Testing', icon: '🧪', proficiency: 80 },
+    { name: 'React.js', icon: '⚛️', proficiency: 95 },
+    { name: 'JavaScript', icon: '📜', proficiency: 92 },
     { name: 'TypeScript', icon: '🔷', proficiency: 90 },
+    { name: 'HTML/CSS', icon: '🎨', proficiency: 92 },
+    { name: 'Redux Toolkit', icon: '🔄', proficiency: 88 },
+    { name: 'Material UI', icon: '🧩', proficiency: 86 },
+    { name: 'Tailwind CSS', icon: '💨', proficiency: 90 },
+    { name: 'REST APIs', icon: '🔌', proficiency: 90 },
+    { name: 'Axios', icon: '🌐', proficiency: 88 },
+    { name: 'Firebase', icon: '🔥', proficiency: 85 },
+    { name: 'Socket.IO', icon: '📡', proficiency: 84 },
+    { name: 'Git / GitHub', icon: '🧰', proficiency: 90 },
+    { name: 'Docker', icon: '🐳', proficiency: 78 },
+    { name: 'Rasa AI', icon: '🤖', proficiency: 80 },
+    { name: 'RBAC & Auth', icon: '🔐', proficiency: 88 },
   ];
 
   const categories = [
@@ -23,12 +26,12 @@ const Skills = () => {
       skills: skills.slice(0, 4),
     },
     {
-      title: 'Backend',
+      title: 'State & Integrations',
       skills: skills.slice(4, 8),
     },
     {
-      title: 'DevOps & Tools',
-      skills: skills.slice(8, 12),
+      title: 'Tools & Practices',
+      skills: skills.slice(8, 15),
     },
   ];
 
@@ -142,16 +145,16 @@ const Skills = () => {
           <div className="max-w-3xl mx-auto space-y-8">
             {[
               {
-                role: 'React JS Developer',
-                company: 'Tech Solutions Inc',
-                period: '2023 - Present',
-                description: 'Developing modern React applications, implementing responsive designs, and working with state management solutions',
+                role: 'Associate Software Developer',
+                company: 'Justlogix',
+                period: 'Apr 2024 - Present',
+                description: 'Building scalable React applications with role-based access control, secure auth, REST API integrations, Firebase notifications, real-time communication, and AI chatbot experiences.',
               },
               {
-                role: 'Frontend Developer',
-                company: 'WebDev Agency',
-                period: '2022 - 2023',
-                description: 'Built interactive user interfaces using React, JavaScript, and modern CSS frameworks',
+                role: 'Frontend Development',
+                company: 'Independent Projects',
+                period: '2022 - 2024',
+                description: 'Developed responsive interfaces, reusable React components, and multi-role web experiences using modern UI libraries and state management patterns.',
               },
             ].map((job, index) => (
               <motion.div

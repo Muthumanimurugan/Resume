@@ -11,9 +11,9 @@ const Home = () => {
   };
 
   const stats = [
-    { label: 'Projects Completed', value: '5+' },
-    { label: 'Happy Clients', value: '5+' },
+    { label: 'Projects Delivered', value: '5+' },
     { label: 'Years Experience', value: '2+' },
+    { label: 'Core Stack', value: 'React / TS' },
   ];
 
   const containerVariants = {
@@ -64,19 +64,19 @@ const Home = () => {
                   Muthumanimurugan KR
                 </h1>
                 <p className="mt-4 text-xl md:text-2xl font-semibold text-gray-700 dark:text-gray-300">
-                  React JS Developer crafting responsive user experiences.
+                  Associate Software Developer crafting scalable React experiences with secure auth, real-time features, and modern UI systems.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-dark-900 px-4 py-3 text-sm text-gray-700 dark:text-gray-200">
                   <MapPin size={16} />
-                  Namakkal, Tamil Nadu, India
+                  Coimbatore, Tamil Nadu, India
                 </div>
               </div>
 
               <p className="max-w-3xl text-base md:text-lg text-gray-600 dark:text-gray-300">
-                I build scalable, responsive web applications with React, JavaScript, and modern UI patterns. My work focuses on clean interfaces, strong user interactions, and reliable front-end architecture.
+                I build responsive, production-grade web applications with React.js, JavaScript, TypeScript, and modern UI libraries. My work includes role-based platforms, secure authentication flows, REST API integrations, real-time communication, and chatbot experiences.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -87,7 +87,7 @@ const Home = () => {
                   Explore Projects
                 </Link>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/muthumani-murugan-kr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary inline-flex items-center justify-center gap-2"

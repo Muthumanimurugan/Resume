@@ -6,18 +6,18 @@ const About = () => {
   const features = [
     {
       icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable code that follows best practices and design patterns.',
+      title: 'Scalable Frontend',
+      description: 'Building reusable React components and maintainable architecture for multi-role production apps.',
     },
     {
       icon: Palette,
-      title: 'UI/UX Design',
-      description: 'Creating beautiful interfaces with attention to detail and user experience.',
+      title: 'Real-Time Experiences',
+      description: 'Creating responsive dashboards, live notifications, and chat-based experiences with modern UI libraries.',
     },
     {
       icon: Rocket,
-      title: 'Performance',
-      description: 'Building fast, optimized applications that provide smooth user interactions.',
+      title: 'Performance Focus',
+      description: 'Optimizing rendering and data flow with React.memo, useMemo, and useCallback for smoother applications.',
     },
   ];
 
@@ -89,10 +89,10 @@ const About = () => {
                 I'm Muthumanimurugan KR
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                I'm a React JS Developer with 2 years of experience, passionate about creating beautiful, functional web applications. I've worked on various projects ranging from small websites to complex web applications using modern React technologies.
+                I’m Muthumanimurugan KR, an Associate Software Developer with 2+ years of hands-on experience building responsive, production-grade web applications using React.js, JavaScript, and TypeScript.
               </p>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                When I'm not coding, you can find me exploring new React features, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and staying updated with the latest trends in React development.
+                My experience spans role-based platforms, secure authentication systems, REST API integrations, Firebase-based notifications, Socket.IO-enabled real-time features, and AI-powered chatbot widgets. I enjoy turning product requirements into polished user experiences that are reliable and maintainable.
               </p>
               <div className="pt-4">
                 <a href="#contact" className="btn-primary">
@@ -140,19 +140,19 @@ const About = () => {
           <div className="max-w-2xl mx-auto">
             {[
               {
-                year: '2022',
-                title: 'Started React Development',
-                description: 'Began my journey as a React developer, learning modern JavaScript and React fundamentals',
+                year: '2021',
+                title: 'Completed B.E. in EEE',
+                description: 'Graduated from SSM Institute of Engineering College with a strong foundation in problem solving and engineering principles.',
               },
               {
-                year: '2023',
-                title: 'React JS Developer',
-                description: 'Worked on multiple React projects, building responsive web applications and user interfaces',
+                year: '2022 - 2023',
+                title: 'Frontend Foundation',
+                description: 'Built a solid base in React, JavaScript, HTML, CSS, and modern UI development through hands-on projects.',
               },
               {
-                year: '2024',
-                title: 'Senior React Developer',
-                description: 'Leading React development projects, mentoring junior developers, and implementing best practices',
+                year: 'Apr 2024 - Present',
+                title: 'Associate Software Developer at Justlogix',
+                description: 'Developing scalable React applications with RBAC, API integrations, real-time features, Firebase notifications, and AI chatbot experiences.',
               },
             ].map((item, index) => (
               <motion.div
